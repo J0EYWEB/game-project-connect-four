@@ -1,6 +1,6 @@
 Project plan:
 HTMl:
-1. Create DIV for main board container to be a grid item.
+1. Create DIV for main board container to be a grid item. 
 2. Create DIVs for each cell with unique ID's.
 
 CSS / SCSS:
@@ -16,4 +16,4 @@ typescript:
 EXTENSIONS:
 9. Create reset button to clear the board and typescript array.
 10. Create score board to track games won and drawn.
-11. Intrudce a timed mode where each move gets 3 seconds to be played.
+11. Introduce a timed mode where each move gets 3 seconds to be played.
