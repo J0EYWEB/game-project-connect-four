@@ -16,5 +16,9 @@
 .game-board__cell--background {
   background-color: white;
 }
+.game-board__cell--background:hover {
+  background-color: cyan;
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=style.css.map */

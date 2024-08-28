@@ -1,7 +1,9 @@
 import './style.css'
-
+//Query Selectors
 const allCells = document.querySelectorAll<HTMLDivElement>('.game-board__cell');
 
+
+//Variables
 let count: number = 0;
 
 if (!allCells){
@@ -9,8 +11,9 @@ if (!allCells){
 };
 
 
+//Loops through all cells and places a disc where clicked - can only click above another counter or bottom of board.
 for(let i: number = 0; i < allCells.length; i++ ){
-    allCells[i].addEventListener('click', () =>{
+    allCells[i].addEventListener('click', () =>{ 
         if(allCells[i].classList.contains('filled')){
             alert('Cell has already been filled, please pick another one!');
         } else {
@@ -19,13 +22,14 @@ for(let i: number = 0; i < allCells.length; i++ ){
                     allCells[i].style.backgroundColor = 'red';
                     allCells[i].classList.add('filled')
                     count += 1;
-                } else {
+                } else if(count % 2 === 1){
                     allCells[i].style.backgroundColor = 'yellow';
                     allCells[i].classList.add('filled')
                     count +=1;
-                }
+                } 
             }
         }
+        
 
     });
     
