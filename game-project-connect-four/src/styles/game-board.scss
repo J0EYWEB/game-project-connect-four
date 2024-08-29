@@ -2,24 +2,26 @@
     width: 600px;
     padding: 15px;
     height: 500px;
-    background-color: blue;
+    background-color: #0d2b47a5;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    gap: 10px;
-    border-radius: 10px;
+    gap: 15px;
+    border-radius: 10%;
+    box-shadow: 0 0 100px red;
 
     &__cell {
         color:white;
         border-radius: 50%;
 
         &--background {
-            background-color: rgb(28, 172, 182);
+            box-shadow: 0 0 15px cyan
         }
 
         &--background:hover {
-            background-color: cyan;
+            // background-color: cyan;
             cursor: pointer;
+            
         }
     }
 

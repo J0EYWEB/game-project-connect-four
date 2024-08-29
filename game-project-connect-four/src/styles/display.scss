@@ -1,5 +1,6 @@
 body{
-    background-color: rgb(28, 172, 182);
+    background: black;
+    color: white;
 }
 
 .player-info{
@@ -11,7 +12,8 @@ body{
 .game-container {
     display: flex;
     justify-content: center;
-    
+    padding: 20px 0;
+
 }
 
 .game-header{

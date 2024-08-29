@@ -2,22 +2,22 @@
   width: 600px;
   padding: 15px;
   height: 500px;
-  background-color: blue;
+  background-color: rgba(13, 43, 71, 0.6470588235);
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  gap: 10px;
-  border-radius: 10px;
+  gap: 15px;
+  border-radius: 10%;
+  box-shadow: 0 0 100px red;
 }
 .game-board__cell {
   color: white;
   border-radius: 50%;
 }
 .game-board__cell--background {
-  background-color: rgb(28, 172, 182);
+  box-shadow: 0 0 15px cyan;
 }
 .game-board__cell--background:hover {
-  background-color: cyan;
   cursor: pointer;
 }
 .game-board .bottom {
@@ -25,7 +25,8 @@
 }
 
 body {
-  background-color: rgb(28, 172, 182);
+  background: black;
+  color: white;
 }
 
 .player-info {
@@ -37,6 +38,7 @@ body {
 .game-container {
   display: flex;
   justify-content: center;
+  padding: 20px 0;
 }
 
 .game-header {
