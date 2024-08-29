@@ -1,7 +1,7 @@
 .game-board {
   width: 700px;
   padding: 15px;
-  height: 400px;
+  height: 600px;
   background-color: blue;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -19,6 +19,9 @@
 .game-board__cell--background:hover {
   background-color: cyan;
   cursor: pointer;
+}
+.game-board .bottom {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
