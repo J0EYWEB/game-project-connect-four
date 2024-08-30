@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&display=swap');
 //Colours
 $board-colour: #0d2b47a5;
 $black-colour: black;
@@ -5,3 +6,6 @@ $accent-colour: cyan;
 $accent-colour-hover: rgba(0, 255, 255, 0.144);
 $player-one-colour: red;
 $player-two-colour: yellow;
+
+//Fonts
+$header-font: "Montserrat", sans-serif;
