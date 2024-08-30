@@ -21,8 +21,22 @@
   background-color: rgba(0, 255, 255, 0.144);
   cursor: pointer;
 }
+.game-board .player-one-counter {
+  background-color: red;
+}
+.game-board .player-two-counter {
+  background-color: yellow;
+}
 .game-board .bottom {
   display: none;
+}
+
+.player-one-shadow {
+  box-shadow: 0 0 100px red;
+}
+
+.player-two-shadow {
+  box-shadow: 0 0 100px yellow;
 }
 
 body {

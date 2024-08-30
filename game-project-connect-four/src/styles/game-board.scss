@@ -15,6 +15,7 @@
     &__cell {
         color:white;
         border-radius: 50%;
+        
 
         &--background {
             box-shadow: 0 0 15px $accent-colour;
@@ -27,7 +28,22 @@
         }
     }
 
+    .player-one-counter{
+        background-color: $player-one-colour;
+    }
+
+    .player-two-counter {
+        background-color: $player-two-colour;
+    }
+    
     .bottom{
         display: none;
     }
+}
+
+.player-one-shadow {
+    box-shadow: 0 0 100px $player-one-colour;
+}
+.player-two-shadow {
+    box-shadow: 0 0 100px $player-two-colour;
 }

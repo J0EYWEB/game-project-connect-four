@@ -8,7 +8,7 @@ const playerTurn = document.querySelector<HTMLSpanElement>('.player-turn');
 let count: number = 0;
 
 if (!allCells || !playerTurn || !gameBoard){
-    throw new Error("Some element was not found");
+    throw new Error("Some query selector is null / not found");
 };
 
 
@@ -20,18 +20,22 @@ for(let i: number = 0; i < allCells.length; i++ ){
         } else {
             if(i + 7 > 41 || allCells[i + 7].classList.contains('filled')){
                 if(count % 2 === 0) {
-                    allCells[i].style.backgroundColor = 'red';
-                    allCells[i].classList.add('filled');
+                    // allCells[i].style.backgroundColor = 'red';
+                    allCells[i].classList.add('filled', 'player-one-counter');
                     count += 1;
                     playerTurn.innerHTML = ' Player Two'
-                    gameBoard.style.boxShadow = '0 0 100px yellow';
+                    gameBoard.classList.add('player-two-shadow');
+                    gameBoard.classList.remove('player-one-shadow')
+                    
 
                 } else if(count % 2 === 1){
-                    allCells[i].style.backgroundColor = 'yellow';
-                    allCells[i].classList.add('filled')
+                    // allCells[i].style.backgroundColor = 'yellow';
+                    allCells[i].classList.add('filled', 'player-two-counter')
                     count +=1;
                     playerTurn.innerHTML = ' Player One'
-                    gameBoard.style.boxShadow = '0 0 100px red';
+                    gameBoard.classList.add('player-one-shadow');
+                    gameBoard.classList.remove('player-two-shadow')
+                    
                 } 
             }
         }
