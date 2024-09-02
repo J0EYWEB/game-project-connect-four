@@ -1,6 +1,6 @@
 //IMPORTS
 import './style.css'
-import winningArrays from './Data/winningCombinationData';
+import winningCombinations from './Data/winningCombinationData';
 
 
 
@@ -9,14 +9,20 @@ const gameBoard = document.querySelector<HTMLDivElement>('.game-board');
 const allCells = document.querySelectorAll<HTMLDivElement>('.game-board__cell');
 const playerTurn = document.querySelector<HTMLSpanElement>('.player-turn');
 const reset = document.querySelector<HTMLButtonElement>('.reset-button');
+const playerOneScore = document.querySelector<HTMLElement>('.player-one-score');
+const playerTwoScore = document.querySelector<HTMLElement>('.player-two-score');
 
 //VARIABLES
 let count: number = 0;
 let winner: number = 0;
+let playerOne:number = 0;
+let playerTwo:number = 0;
+
+
 
 
 //NULL CHECK
-if (!allCells || !playerTurn || !gameBoard || !reset){
+if (!allCells || !playerTurn || !gameBoard || !reset || !playerOneScore || !playerTwoScore){
     throw new Error("Some query selector is null / not found");
 };
 
@@ -26,17 +32,19 @@ if (!allCells || !playerTurn || !gameBoard || !reset){
 
 //winnerCheck => Checks the winningCombinationsData array against the cells which have had their class' altered
 function winnerCheck() {
-    for (let i:number = 0; i < winningArrays.length; i++) {
-      const cellOne = allCells[winningArrays[i][0]]
-      const cellTwo = allCells[winningArrays[i][1]]
-      const cellThree = allCells[winningArrays[i][2]]
-      const cellFour = allCells[winningArrays[i][3]]
+    for (let i:number = 0; i < winningCombinations.length; i++) {
+      const cellOne = allCells[winningCombinations[i][0]]
+      const cellTwo = allCells[winningCombinations[i][1]]
+      const cellThree = allCells[winningCombinations[i][2]]
+      const cellFour = allCells[winningCombinations[i][3]]
 
       if (cellOne.classList.contains('player-one-counter') &&
         cellTwo.classList.contains('player-one-counter') &&
         cellThree.classList.contains('player-one-counter') &&
         cellFour.classList.contains('player-one-counter'))
         {
+        playerOne += 1;
+        playerOneScore!.innerText = playerOne.toString();
         winner = 1;
         alert('Player One Wins!');
       }
@@ -45,6 +53,8 @@ function winnerCheck() {
         cellThree.classList.contains('player-two-counter') &&
         cellFour.classList.contains('player-two-counter'))
       {
+        playerTwo += 1;
+        playerTwoScore!.innerText = playerTwo.toString();
         winner = 1;
         alert('Player Two Wins!');
       }

@@ -1,0 +1,26 @@
+@import './variables.scss';
+
+.score-board {
+    text-align: center;
+
+    .score-board-container{
+        display: flex;
+        justify-content: space-evenly;
+        
+
+        &__card{
+            border: 2px solid $accent-colour;
+            padding: 20px;
+            border-radius: 20px;
+            font-family: $header-font;
+            color:black;
+            font-size: 20px;
+            text-shadow:
+            -1px -1px 0 $accent-colour,
+             1px -1px 0 $accent-colour,
+            -1px 1px 0 $accent-colour,
+            1px 1px 0 $accent-colour;
+            
+        }
+    }
+}
