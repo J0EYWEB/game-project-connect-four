@@ -1,0 +1,60 @@
+.player-info {
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        font-family: $header-font;
+        color: black;
+        text-shadow:
+        -1px -1px 0 $accent-colour,
+        1px -1px 0 $accent-colour,
+        -1px 1px 0 $accent-colour,
+        1px 1px 0 $accent-colour;
+        
+    }
+    .button-container{
+        display: flex;
+        width: 100%;
+    
+        .button {
+            background-color: transparent;
+            font-size: 20px;
+            color: black;
+            padding: 10px 0;
+            width: 50%;
+            border: 2px solid cyan;
+            border-radius: 20px;
+            text-shadow:
+            -1px -1px 0 $accent-colour,
+            1px -1px 0 $accent-colour,
+            -1px 1px 0 $accent-colour,
+            1px 1px 0 $accent-colour;
+
+            
+        }
+
+        .button:hover {
+            cursor: pointer;
+
+        }
+    }
+}   
+
+.player-turn {
+
+    &--colourOne{
+        text-shadow:
+        -1px -1px 0 $player-two-colour,
+        1px -1px 0 $player-two-colour,
+        -1px 1px 0 $player-two-colour,
+        1px 1px 0 $player-two-colour;
+    }
+
+    &--colourTwo {
+        text-shadow:
+        -1px -1px 0 $player-one-colour,
+        1px -1px 0 $player-one-colour,
+        -1px 1px 0 $player-one-colour,
+        1px 1px 0 $player-one-colour;
+    }
+}

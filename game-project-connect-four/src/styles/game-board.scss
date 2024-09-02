@@ -1,9 +1,9 @@
 @import './variables.scss';
 
 .game-board {
-    width: 600px;
+    width: 400px;
     padding: 15px;
-    height: 500px;
+    height: 300px;
     background-color: $board-colour;
     display: grid;
     grid-template-columns: repeat(7, 1fr);

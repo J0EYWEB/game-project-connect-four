@@ -8,6 +8,7 @@ import winningArrays from './Data/winningCombinationData';
 const gameBoard = document.querySelector<HTMLDivElement>('.game-board');
 const allCells = document.querySelectorAll<HTMLDivElement>('.game-board__cell');
 const playerTurn = document.querySelector<HTMLSpanElement>('.player-turn');
+const reset = document.querySelector<HTMLButtonElement>('.reset-button');
 
 //VARIABLES
 let count: number = 0;
@@ -15,7 +16,7 @@ let winner: number = 0;
 
 
 //NULL CHECK
-if (!allCells || !playerTurn || !gameBoard){
+if (!allCells || !playerTurn || !gameBoard || !reset){
     throw new Error("Some query selector is null / not found");
 };
 
@@ -54,18 +55,32 @@ function winnerCheck() {
 const playerOneCounter = () =>{
     count += 1;
     playerTurn.innerHTML = ' Player Two'
+    playerTurn.classList.add('player-turn--colourOne');
+    playerTurn.classList.remove('player-turn--colourTwo');
     gameBoard.classList.add('player-two-shadow');
-    gameBoard.classList.remove('player-one-shadow')
+    gameBoard.classList.remove('player-one-shadow');
 }
 
 //playerTwoCounter contains modifiers when player Two has placed a counter
 const playerTwoCounter = () =>{
     count +=1;
     playerTurn.innerHTML = ' Player One'
+    playerTurn.classList.add('player-turn--colourTwo');
+    playerTurn.classList.remove('player-turn--colourOne');
     gameBoard.classList.add('player-one-shadow');
-    gameBoard.classList.remove('player-two-shadow')
+    gameBoard.classList.remove('player-two-shadow');
 }
 
+
+const resetButtonClickHandler = () => {
+    count = 0;
+    winner= 0;
+    for (let i:number = 0; i < allCells.length; i++){
+        allCells[i].classList.remove('player-one-counter', 'player-two-counter', 'filled');
+    };
+
+}
+reset.addEventListener('click', resetButtonClickHandler);
   
 
 
