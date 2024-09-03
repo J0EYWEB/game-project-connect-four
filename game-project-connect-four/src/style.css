@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&display=swap");
 .game-board {
   width: 400px;
   padding: 15px;
@@ -65,6 +68,16 @@ body {
   color: white;
 }
 
+@media only screen and (min-width: 1200px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    height: 70vh;
+  }
+}
+
 .player-info {
   display: flex;
   align-items: center;
@@ -103,34 +116,6 @@ body {
 .player-info .button-container {
   display: flex;
   width: 100%;
-}
-.player-info .button-container .button {
-  background-color: transparent;
-  font-size: 20px;
-  color: black;
-  padding: 10px 0;
-  width: 50%;
-  border: 2px solid cyan;
-  border-radius: 20px;
-  text-shadow: -1px -1px 0 cyan, 1px -1px 0 cyan, -1px 1px 0 cyan, 1px 1px 0 cyan;
-}
-@media only screen and (min-width: 768px) {
-  .player-info .button-container .button {
-    width: 30%;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .player-info .button-container .button {
-    width: 40%;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .player-info .button-container .button {
-    width: 50%;
-  }
-}
-.player-info .button-container .button:hover {
-  cursor: pointer;
 }
 @media only screen and (min-width: 768px) {
   .player-info .button-container {
@@ -213,14 +198,34 @@ body {
   }
 }
 
-@media only screen and (min-width: 1200px) {
-  main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    height: 70vh;
+.button {
+  background-color: transparent;
+  font-size: 20px;
+  color: black;
+  padding: 10px 0;
+  width: 50%;
+  border: 2px solid cyan;
+  border-radius: 20px;
+  text-shadow: -1px -1px 0 cyan, 1px -1px 0 cyan, -1px 1px 0 cyan, 1px 1px 0 cyan;
+}
+@media only screen and (min-width: 768px) {
+  .button {
+    width: 30%;
   }
+}
+@media only screen and (min-width: 992px) {
+  .button {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .button {
+    width: 50%;
+  }
+}
+
+.button:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

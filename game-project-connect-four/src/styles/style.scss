@@ -1,17 +1,7 @@
-@use './media-mixins.scss';
-@import './game-board.scss';
-@import './display.scss';
-@import './game-header.scss';
-@import './player-info.scss';
-@import './score-board.scss';
+@import './components/game-board.scss';
+@import './layout/display.scss';
+@import './layout/game-header.scss';
+@import './layout/player-info.scss';
+@import './layout/scoreboard.scss';
+@import './components/button.scss';
 
-main {
-    @include media-mixins.laptop-large {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        align-items: center;
-        height: 70vh;
-
-    }
-}

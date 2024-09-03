@@ -1,5 +1,5 @@
-@use './media-mixins.scss';
-@import './variables.scss';
+@use '../ultils/media-mixins.scss';
+@import '../ultils/variables.scss';
 
 .game-board {
     width: 400px;

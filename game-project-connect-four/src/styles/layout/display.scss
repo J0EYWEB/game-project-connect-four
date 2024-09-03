@@ -1,0 +1,32 @@
+@use '../ultils/media-mixins.scss';
+@import '../ultils/variables.scss';
+
+body{
+    background-color: $black-colour;
+    color: white;
+}
+
+main {
+    @include media-mixins.laptop-large {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        height: 70vh;
+
+    }
+}
+
+.player-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+}
+
