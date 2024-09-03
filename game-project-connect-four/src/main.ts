@@ -20,15 +20,10 @@ let playerOne:number = 0;
 let playerTwo:number = 0;
 let drawCondition: number = 0;
 
-
-
-
 //NULL CHECK
 if (!allCells || !playerTurn || !gameBoard || !reset || !newGame || !playerOneScore || !playerTwoScore){
     throw new Error("Some query selector is null / not found");
 };
-
-
 
 //FUNCTIONS
 
