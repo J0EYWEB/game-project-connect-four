@@ -12,11 +12,13 @@ const reset = document.querySelector<HTMLButtonElement>('.reset-button');
 const playerOneScore = document.querySelector<HTMLElement>('.player-one-score');
 const playerTwoScore = document.querySelector<HTMLElement>('.player-two-score');
 const newGame = document.querySelector<HTMLButtonElement>('.new-game-button');
+
 //VARIABLES
 let count: number = 0;
 let winner: number = 0;
 let playerOne:number = 0;
 let playerTwo:number = 0;
+let drawCondition: number = 0;
 
 
 
@@ -58,12 +60,14 @@ function winnerCheck() {
         winner = 1;
         alert('Player Two Wins!');
       }
+      
     }
 }
 
 //playerOneCounter contains modifiers when player one has placed a counter
 const playerOneCounter = () =>{
     count += 1;
+    drawCondition += 1;
     playerTurn.innerHTML = ' Player Two';
     playerTurn.classList.add('player-turn--colourOne');
     playerTurn.classList.remove('player-turn--colourTwo');
@@ -74,6 +78,7 @@ const playerOneCounter = () =>{
 //playerTwoCounter contains modifiers when player Two has placed a counter
 const playerTwoCounter = () =>{
     count +=1;
+    drawCondition += 1;
     playerTurn.innerHTML = ' Player One';
     playerTurn.classList.add('player-turn--colourTwo');
     playerTurn.classList.remove('player-turn--colourOne');
@@ -85,6 +90,7 @@ const playerTwoCounter = () =>{
 const resetButtonClickHandler = () => {
     count = 0;
     winner= 0;
+    drawCondition = 0;
     for (let i:number = 0; i < allCells.length; i++){
         allCells[i].classList.remove('player-one-counter', 'player-two-counter', 'filled');
     };
@@ -115,10 +121,13 @@ for(let i: number = 0; i < allCells.length; i++ ){
         if(winner !== 0){
             return false;
         }
+        if(drawCondition === 41){
+            alert("It's a draw!");
+        }
+
         if(allCells[i].classList.contains('filled')){
             alert('Cell has already been filled, please pick another one!');
-        }
-        if(i + 7 > 41 || allCells[i + 7].classList.contains('filled')){
+        }else if(i + 7 > 41 || allCells[i + 7].classList.contains('filled')){
             if(count % 2 === 0) {
                 allCells[i].classList.add('filled', 'player-one-counter');
                 playerOneCounter();
@@ -128,6 +137,8 @@ for(let i: number = 0; i < allCells.length; i++ ){
             } 
         }
         winnerCheck();
+        console.log(drawCondition);
+        
     });
     
 }
