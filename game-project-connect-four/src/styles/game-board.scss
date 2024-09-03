@@ -1,3 +1,4 @@
+@use './media-mixins.scss';
 @import './variables.scss';
 
 .game-board {
@@ -15,7 +16,6 @@
     &__cell {
         color:white;
         border-radius: 50%;
-        
 
         &--background {
             box-shadow: 0 0 15px $accent-colour;
@@ -38,6 +38,21 @@
     
     .bottom{
         display: none;
+    }
+
+    @include media-mixins.large-phone {
+        width: 500px;
+        height: 400px;
+    }
+    
+    @include media-mixins.tablet {
+        width: 600px;
+        height: 500px;
+    }
+
+    @include media-mixins.laptop-large {
+        width: 500px;
+        height: 400px;
     }
 }
 

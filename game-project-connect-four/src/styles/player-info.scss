@@ -1,3 +1,4 @@
+@use './media-mixins.scss';
 .player-info {
     display: flex;
     flex-direction: column;
@@ -30,12 +31,33 @@
             -1px 1px 0 $accent-colour,
             1px 1px 0 $accent-colour;
 
+            @include media-mixins.tablet {
+                width: 30%;
+            }
+
+            @include media-mixins.laptop {
+                width: 40%;
+            }
+
+            @include media-mixins.laptop-large{
+                width: 50%;
+            
+            }
+
             
         }
 
         .button:hover {
             cursor: pointer;
 
+        }
+
+        @include media-mixins.tablet {
+            justify-content: space-evenly;
+        }
+
+        @include media-mixins.laptop {
+            width: 70%;
         }
     }
 }   

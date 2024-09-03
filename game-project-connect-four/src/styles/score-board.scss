@@ -1,26 +1,76 @@
+@use './media-mixins.scss';
 @import './variables.scss';
 
 .score-board {
-    text-align: center;
+    text-align: center;  
+    font-family: $header-font;
+    text-shadow:
+        -1px -1px 0 $accent-colour,
+        1px -1px 0 $accent-colour,
+        -1px 1px 0 $accent-colour,
+        1px 1px 0 $accent-colour;
+    color: black;
 
     .score-board-container{
         display: flex;
         justify-content: space-evenly;
         
+        
 
         &__card{
             border: 2px solid $accent-colour;
-            padding: 20px;
+            padding: 5px;
             border-radius: 20px;
-            font-family: $header-font;
             color:black;
             font-size: 20px;
-            text-shadow:
-            -1px -1px 0 $accent-colour,
-             1px -1px 0 $accent-colour,
-            -1px 1px 0 $accent-colour,
-            1px 1px 0 $accent-colour;
+            
+            
+
+            &--playerOne{
+                text-shadow:
+                -1px -1px 0 $player-one-colour,
+                1px -1px 0 $player-one-colour,
+                -1px 1px 0 $player-one-colour,
+                1px 1px 0 $player-one-colour;
+            }
+
+            &--playerTwo {
+                text-shadow:
+                -1px -1px 0 $player-two-colour,
+                1px -1px 0 $player-two-colour,
+                -1px 1px 0 $player-two-colour,
+                1px 1px 0 $player-two-colour;
+            }
+
+            @include media-mixins.large-phone {
+                width: 50%;
+            }
+            @include media-mixins.tablet {
+                width: 25%;
+            }
+            @include media-mixins.laptop {
+                width: 15%;
+                
+            }
+            @include media-mixins.laptop-large{
+                margin: 0 5%;
+            }
+            @include media-mixins.laptop-large {
+                padding: 35px;
+                text-align: center;
+            }
+            @include media-mixins.laptop-large{
+                font-size: 18px;
+            
+            }
             
         }
+
+        @include media-mixins.laptop-large{
+            justify-content: center;
+        
+        }
+
+
     }
 }

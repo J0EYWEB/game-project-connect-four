@@ -33,6 +33,24 @@
 .game-board .bottom {
   display: none;
 }
+@media only screen and (min-width: 576px) {
+  .game-board {
+    width: 500px;
+    height: 400px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .game-board {
+    width: 600px;
+    height: 500px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .game-board {
+    width: 500px;
+    height: 400px;
+  }
+}
 
 .player-one-shadow {
   box-shadow: 0 0 100px red;
@@ -96,8 +114,33 @@ body {
   border-radius: 20px;
   text-shadow: -1px -1px 0 cyan, 1px -1px 0 cyan, -1px 1px 0 cyan, 1px 1px 0 cyan;
 }
+@media only screen and (min-width: 768px) {
+  .player-info .button-container .button {
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .player-info .button-container .button {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .player-info .button-container .button {
+    width: 50%;
+  }
+}
 .player-info .button-container .button:hover {
   cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .player-info .button-container {
+    justify-content: space-evenly;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .player-info .button-container {
+    width: 70%;
+  }
 }
 
 .player-turn {
@@ -112,6 +155,9 @@ body {
 
 .score-board {
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: -1px -1px 0 cyan, 1px -1px 0 cyan, -1px 1px 0 cyan, 1px 1px 0 cyan;
+  color: black;
 }
 .score-board .score-board-container {
   display: flex;
@@ -119,12 +165,62 @@ body {
 }
 .score-board .score-board-container__card {
   border: 2px solid cyan;
-  padding: 20px;
+  padding: 5px;
   border-radius: 20px;
-  font-family: "Montserrat", sans-serif;
   color: black;
   font-size: 20px;
-  text-shadow: -1px -1px 0 cyan, 1px -1px 0 cyan, -1px 1px 0 cyan, 1px 1px 0 cyan;
+}
+.score-board .score-board-container__card--playerOne {
+  text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+}
+.score-board .score-board-container__card--playerTwo {
+  text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow, 1px 1px 0 yellow;
+}
+@media only screen and (min-width: 576px) {
+  .score-board .score-board-container__card {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .score-board .score-board-container__card {
+    width: 25%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .score-board .score-board-container__card {
+    width: 15%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .score-board .score-board-container__card {
+    margin: 0 5%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .score-board .score-board-container__card {
+    padding: 35px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .score-board .score-board-container__card {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .score-board .score-board-container {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    height: 70vh;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
