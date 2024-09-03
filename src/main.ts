@@ -105,8 +105,7 @@ const resetButtonClickHandler = () => {
     playerOneScore.innerText = '0';
     playerTwoScore.innerText = '0';
     playerOne = 0;
-    playerTwo = 0;
-    
+    playerTwo = 0;  
 }
 reset.addEventListener('click', resetButtonClickHandler);
   
@@ -135,7 +134,6 @@ for(let i: number = 0; i < allCells.length; i++ ){
             } 
         }
         winnerCheck();
-        console.log(drawCondition);
         
     });
     
