@@ -86,8 +86,8 @@ const playerTwoCounter = () =>{
     gameBoard.classList.remove('player-two-shadow');
 }
 
-// Reset button handler and event listener
-const resetButtonClickHandler = () => {
+//New game button handler and event listener
+const newGameButtonClickHandler = () => {
     count = 0;
     winner= 0;
     drawCondition = 0;
@@ -99,20 +99,23 @@ const resetButtonClickHandler = () => {
     playerTurn.classList.remove('player-turn--colourOne');
     playerTurn.classList.remove('player-turn--colourTwo');
     playerTurn.innerHTML = ' Player One';
-}
-reset.addEventListener('click', resetButtonClickHandler);
-  
-//New game button handler and event listener
-const newGameButtonClickHandler = () => {
-    resetButtonClickHandler();
-    playerOneScore.innerText = '0';
-    playerTwoScore.innerText = '0';
-    playerOne = 0;
-    playerTwo = 0;
 
 }
 
 newGame.addEventListener('click', newGameButtonClickHandler);
+
+// Reset button handler and event listener
+const resetButtonClickHandler = () => {
+    newGameButtonClickHandler();
+    playerOneScore.innerText = '0';
+    playerTwoScore.innerText = '0';
+    playerOne = 0;
+    playerTwo = 0;
+    
+}
+reset.addEventListener('click', resetButtonClickHandler);
+  
+
 
 
 //Loops through all cells and places a counter where clicked - can only click above another counter or bottom of board.
