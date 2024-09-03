@@ -42,6 +42,12 @@
 
 .player-turn {
 
+    text-shadow:
+        -1px -1px 0 $player-one-colour,
+        1px -1px 0 $player-one-colour,
+        -1px 1px 0 $player-one-colour,
+        1px 1px 0 $player-one-colour;
+
     &--colourOne{
         text-shadow:
         -1px -1px 0 $player-two-colour,

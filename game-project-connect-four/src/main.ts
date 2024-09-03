@@ -11,7 +11,7 @@ const playerTurn = document.querySelector<HTMLSpanElement>('.player-turn');
 const reset = document.querySelector<HTMLButtonElement>('.reset-button');
 const playerOneScore = document.querySelector<HTMLElement>('.player-one-score');
 const playerTwoScore = document.querySelector<HTMLElement>('.player-two-score');
-
+const newGame = document.querySelector<HTMLButtonElement>('.new-game-button');
 //VARIABLES
 let count: number = 0;
 let winner: number = 0;
@@ -22,7 +22,7 @@ let playerTwo:number = 0;
 
 
 //NULL CHECK
-if (!allCells || !playerTurn || !gameBoard || !reset || !playerOneScore || !playerTwoScore){
+if (!allCells || !playerTurn || !gameBoard || !reset || !newGame || !playerOneScore || !playerTwoScore){
     throw new Error("Some query selector is null / not found");
 };
 
@@ -64,7 +64,7 @@ function winnerCheck() {
 //playerOneCounter contains modifiers when player one has placed a counter
 const playerOneCounter = () =>{
     count += 1;
-    playerTurn.innerHTML = ' Player Two'
+    playerTurn.innerHTML = ' Player Two';
     playerTurn.classList.add('player-turn--colourOne');
     playerTurn.classList.remove('player-turn--colourTwo');
     gameBoard.classList.add('player-two-shadow');
@@ -74,25 +74,39 @@ const playerOneCounter = () =>{
 //playerTwoCounter contains modifiers when player Two has placed a counter
 const playerTwoCounter = () =>{
     count +=1;
-    playerTurn.innerHTML = ' Player One'
+    playerTurn.innerHTML = ' Player One';
     playerTurn.classList.add('player-turn--colourTwo');
     playerTurn.classList.remove('player-turn--colourOne');
     gameBoard.classList.add('player-one-shadow');
     gameBoard.classList.remove('player-two-shadow');
 }
 
-
+// Reset button handler and event listener
 const resetButtonClickHandler = () => {
     count = 0;
     winner= 0;
     for (let i:number = 0; i < allCells.length; i++){
         allCells[i].classList.remove('player-one-counter', 'player-two-counter', 'filled');
     };
-
+    gameBoard.classList.remove('player-two-shadow');
+    gameBoard.classList.remove('player-one-shadow');
+    playerTurn.classList.remove('player-turn--colourOne');
+    playerTurn.classList.remove('player-turn--colourTwo');
+    playerTurn.innerHTML = ' Player One';
 }
 reset.addEventListener('click', resetButtonClickHandler);
   
+//New game button handler and event listener
+const newGameButtonClickHandler = () => {
+    resetButtonClickHandler();
+    playerOneScore.innerText = '0';
+    playerTwoScore.innerText = '0';
+    playerOne = 0;
+    playerTwo = 0;
 
+}
+
+newGame.addEventListener('click', newGameButtonClickHandler);
 
 
 //Loops through all cells and places a counter where clicked - can only click above another counter or bottom of board.
